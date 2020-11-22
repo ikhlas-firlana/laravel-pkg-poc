@@ -4,7 +4,7 @@ namespace Ifirlana\Poc\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
-use Ifirlana\Poc\Tests\TestCase;
+use Orchestra\Testbench\TestCase;
 
 class MakeFooCommandTest extends TestCase
 {
@@ -33,7 +33,7 @@ class MakeFooCommandTest extends TestCase
 
 namespace App\Foo;
 
-use Ifirlana\Poc\Foo;
+use Ifirlana\Poc\Poc;
 
 class MyFooClass implements Foo
 {

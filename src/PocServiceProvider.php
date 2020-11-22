@@ -49,6 +49,12 @@ class PocServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+            if (! class_exists('CreatePocTable')) {
+                $this->publishes([
+                  __DIR__ . '/../database/migrations/create_poc_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_poc_table.php'),
+                  // you can add any number of migrations here
+                ], 'migrations');
+              }
         }
 
         
