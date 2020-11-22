@@ -7,6 +7,12 @@ use Ifirlana\Poc\PocServiceProvider;
 
 class ExampleTest extends TestCase
 {
+    
+    public function setUp(): void
+    {
+        parent::setUp();
+        // additional setup
+    }
 
     protected function getPackageProviders($app)
     {

@@ -4,6 +4,9 @@ namespace Ifirlana\Poc;
 
 use Illuminate\Support\ServiceProvider;
 
+use Ifirlana\Poc\Console\{InstallPocPackage, MakeFooCommand};
+
+
 class PocServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +27,11 @@ class PocServiceProvider extends ServiceProvider
                 __DIR__.'/../config/config.php' => config_path('poc.php'),
             ], 'config');
 
+            $this->commands([
+                InstallPocPackage::class,
+                MakeFooCommand::class,
+            ]);
+
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/poc'),
@@ -42,6 +50,8 @@ class PocServiceProvider extends ServiceProvider
             // Registering package commands.
             // $this->commands([]);
         }
+
+        
     }
 
     /**
@@ -55,6 +65,9 @@ class PocServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('poc', function () {
             return new Poc;
+        });
+        $this->app->bind('calculator', function($app) {
+            return new Calculator();
         });
     }
 }

@@ -47,7 +47,8 @@
                 "Ifirlana\\Poc\\PocServiceProvider"
             ],
             "aliases": {
-                "Poc": "Ifirlana\\Poc\\PocFacade"
+                "Poc": "Ifirlana\\Poc\\PocFacade",
+                "Calculator": "Ifirlana\\Poc\\Facades\\Calculator"
             }
         }
     }
