@@ -8,6 +8,7 @@ class TestCase extends \Orchestra\Testbench\TestCase {
   public function setUp(): void {
     parent::setUp();
     // additional setup
+    $this->withFactories(base_path(__DIR__ . '/../database/factories'));
   }
 
   protected function getPackageProviders($app) {
