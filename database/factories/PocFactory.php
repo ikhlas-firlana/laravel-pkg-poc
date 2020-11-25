@@ -1,15 +1,9 @@
 <?php
 
-namespace Ifirlana\Poc\Database\Factories;
-
-use Ifirlana\Poc\Models\Poc;
-use Faker\Generator as Faker;
-
-$factory->define(Poc::class, function (Faker $faker) {
+$factory->define(\Ifirlana\Poc\Models\Poc::class, function (Faker\Generator $faker) {
   return [
     'title'     => $faker->words(3),
     'body'      => $faker->paragraph,
-    'author_id' => 999,
   ];
 });
 
