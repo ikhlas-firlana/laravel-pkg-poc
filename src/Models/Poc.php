@@ -9,8 +9,4 @@ class Poc extends Model {
   // Disable Laravel's mass assignment protection
   protected $guarded = [];
 
-  public function author() {
-    return $this->belongsTo(User::class);
-  }
-  
 }

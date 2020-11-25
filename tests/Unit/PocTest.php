@@ -21,16 +21,15 @@ class PostTest extends TestCase {
 
   /** @test */
   function a_poc_has_a_title() {
-    // $post = $poc->create(['title' => 'Fake Title']);
     $poc = factory(Poc::class)->create(['title' => 'Fake Title']);
     $this->assertEquals('Fake Title', $poc->title);
   }
 
-  // /** @test */
-  // function a_post_has_a_body() {
-  //   $post = factory(Post::class)->create(['title' => 'Fake Body']);
-  //   $this->assertEquals('Fake Title', $post->body);
-  // }
+  /** @test */
+  function a_poc_has_a_body() {
+    $poc = factory(Poc::class)->create(['body' => 'Fake Title']);
+    $this->assertEquals('Fake Title', $poc->body);
+  }
 
   // /** @test */
   // function a_post_has_an_author_id() {
