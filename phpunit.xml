@@ -8,6 +8,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+         cacheTokens="false"
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Test Suite">
@@ -33,5 +34,6 @@
         <env name="APP_KEY" value="base64:M1igrxNfAWlVGyxxDholHqvVqvtPjAzCoJ+2/ILAVPw="/>
         <server name="DB_CONNECTION" value="sqlite"/>
         <server name="DB_DATABASE" value=":memory:"/>
+        <!-- <env name="DB_DATABASE" value="my_test_database"/> -->
 </php>
 </phpunit>

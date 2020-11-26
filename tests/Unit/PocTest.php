@@ -3,21 +3,10 @@
 
 namespace Ifirlana\Poc\Tests\Unit;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
 use Ifirlana\Poc\Tests\TestCase;
 use Ifirlana\Poc\Models\Poc;
 
 class PostTest extends TestCase {
-  // use RefreshDatabase;
-
-  protected $poc;
-
-  public function setUp(): void {
-    parent::setUp();
-
-    $this->withFactories(__DIR__.'/../../database/factories');
-
-  }
 
   /** @test */
   function a_poc_has_a_title() {
@@ -27,8 +16,18 @@ class PostTest extends TestCase {
 
   /** @test */
   function a_poc_has_a_body() {
-    $poc = factory(Poc::class)->create(['body' => 'Fake Title']);
-    $this->assertEquals('Fake Title', $poc->body);
+    $poc = factory(Poc::class)->create(['title' => 'Fake Title']);
+    if ($poc->body) {
+      $this->assertTrue(true);
+      return;
+    }
+    $this->assertTrue(false);
+  }
+
+  /** @test */
+  function a_poc_body_has_value_string() {
+    $poc = factory(Poc::class)->create(['title' => 'Fake Title', 'body' => 'Fake Body']);
+    $this->assertEquals('Fake Body', $poc->body);
   }
 
   // /** @test */
